@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
 goToStore(event) {
   event.preventDefault();
-  console.log(this.storeInput.value);
+  const storeId = this.storeInput.value;
+  this.props.history.push(`store/${storeId}`);
 
 }
 
